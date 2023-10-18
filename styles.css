@@ -1,3 +1,7 @@
+* {
+    font-family: 'Courier New', Courier, monospace;
+}
+
 body {
     box-sizing: border-box;
     margin: 0;
@@ -24,7 +28,7 @@ header {
     height: auto;
     display: flex;
     flex-direction: column;
-    border: solid black;
+    /* border: solid black; */
     flex-wrap: wrap;
 }
 

@@ -28,6 +28,8 @@ function colorChange(e) {
     let b = Math.floor(Math.random() * 256);
     let color = `rgb(${r}, ${g}, ${b})`;
     e.target.style.backgroundColor = color;
+    // e.target.style.filter = "brightness(100%)";
+    e.target.style.filter += "brightness(80%)";
 }
 
 // createGrid(16);
