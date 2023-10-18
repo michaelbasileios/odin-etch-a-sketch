@@ -22,14 +22,24 @@ function createGrid(n) {
     }
 }
 //CHANGE COLOR FUNCTION
-function colorChange(e) {
-    let r = Math.floor(Math.random() * 256);
-    let g = Math.floor(Math.random() * 256);
-    let b = Math.floor(Math.random() * 256);
-    let color = `rgb(${r}, ${g}, ${b})`;
-    e.target.style.backgroundColor = color;
-    // e.target.style.filter = "brightness(100%)";
-    e.target.style.filter += "brightness(80%)";
-}
+// function colorChange(e) {
+//     let r = Math.floor(Math.random() * 256);
+//     let g = Math.floor(Math.random() * 256);
+//     let b = Math.floor(Math.random() * 256);
+//     let color = `rgb(${r}, ${g}, ${b})`;
+//     e.target.style.backgroundColor = color;
+//     // e.target.style.filter += "brightness(80%)";
+// }
 
-// createGrid(16);
+//HSL COLOR GENERATOR FUNCTION
+const colorChange = (e) => {
+    const randomNumber = (min, max) => 
+        Math.round(Math.random() * (max - min) + min);
+    
+    const {hue, saturation, lightness} = {
+        hue: randomNumber(0, 360),
+        saturation: randomNumber(0, 100),
+        lightness: randomNumber(0, 100),
+    };
+    e.target.style.backgroundColor = `hsl(${hue}, ${saturation}%, ${lightness}%)`;
+}
