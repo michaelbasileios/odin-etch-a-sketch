@@ -14,8 +14,8 @@ function createGrid(n) {
         for (let j = 0; j<n; j++) {
             const squareDiv = document.createElement('div');
             squareDiv.setAttribute('class', 'square-div');
-            squareDiv.style.height = 960/n + "px";
-            squareDiv.style.width = 960/n + "px";
+            squareDiv.style.height = (960/n - 2) + "px";
+            squareDiv.style.width = (960/n - 2) + "px";
             squareDiv.addEventListener('mouseover', colorChange);
             rowDiv.appendChild(squareDiv);}
         gridContainer.appendChild(rowDiv);}
