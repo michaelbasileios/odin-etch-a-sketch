@@ -1,6 +1,9 @@
 const gridContainer = document.querySelector('#grid-container');
-//CREATE 16x16 grid
+const customGridBtn = document.querySelector('#custom-grid-btn');
+customGridBtn.addEventListener('click', createGrid);
+//CREATE GRID FUNCTION
 function createGrid(n) {
+    n = 16;
     for (let i = 0; i<n; i++) {
         const rowDiv = document.createElement('div');
         rowDiv.setAttribute('class', 'row-div');
@@ -12,7 +15,7 @@ function createGrid(n) {
         gridContainer.appendChild(rowDiv);
     }
 }
-
+//CHANGE COLOR FUNCTION
 function colorChange(e) {
     let r = Math.floor(Math.random() * 256);
     let g = Math.floor(Math.random() * 256);
@@ -21,4 +24,4 @@ function colorChange(e) {
     e.target.style.backgroundColor = color;
 }
 
-createGrid(16);
+// createGrid(16);
