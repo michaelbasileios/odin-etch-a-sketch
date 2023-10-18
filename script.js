@@ -21,6 +21,17 @@ function createGrid(n) {
         gridContainer.appendChild(rowDiv);}
     }
 }
+//HSL COLOR GENERATOR FUNCTION
+function colorChange(e) {
+    const randomNumber = (min, max) => 
+    Math.round(Math.random() * (max - min) + min);
+    const {hue, saturation, lightness} = {
+        hue: randomNumber(0, 360),
+        saturation: randomNumber(0, 100),
+        lightness: randomNumber(0, 100),
+    };
+    e.target.style.backgroundColor = `hsl(${hue}, ${saturation}%, ${lightness}%)`;
+}
 //CHANGE COLOR FUNCTION
 // function colorChange(e) {
 //     let r = Math.floor(Math.random() * 256);
@@ -30,16 +41,3 @@ function createGrid(n) {
 //     e.target.style.backgroundColor = color;
 //     // e.target.style.filter += "brightness(80%)";
 // }
-
-//HSL COLOR GENERATOR FUNCTION
-const colorChange = (e) => {
-    const randomNumber = (min, max) => 
-        Math.round(Math.random() * (max - min) + min);
-    
-    const {hue, saturation, lightness} = {
-        hue: randomNumber(0, 360),
-        saturation: randomNumber(0, 100),
-        lightness: randomNumber(0, 100),
-    };
-    e.target.style.backgroundColor = `hsl(${hue}, ${saturation}%, ${lightness}%)`;
-}
