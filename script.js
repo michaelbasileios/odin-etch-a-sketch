@@ -3,16 +3,22 @@ const customGridBtn = document.querySelector('#custom-grid-btn');
 customGridBtn.addEventListener('click', createGrid);
 //CREATE GRID FUNCTION
 function createGrid(n) {
-    n = 16;
-    for (let i = 0; i<n; i++) {
+    n = prompt("Enter a number", 16);
+    gridContainer.innerHTML = '';
+    if (n > 100) {
+        alert("Grid overload. Try again.");
+    } else {
+        for (let i = 0; i<n; i++) {
         const rowDiv = document.createElement('div');
         rowDiv.setAttribute('class', 'row-div');
         for (let j = 0; j<n; j++) {
             const squareDiv = document.createElement('div');
             squareDiv.setAttribute('class', 'square-div');
+            squareDiv.style.height = 960/n + "px";
+            squareDiv.style.width = 960/n + "px";
             squareDiv.addEventListener('mouseover', colorChange);
             rowDiv.appendChild(squareDiv);}
-        gridContainer.appendChild(rowDiv);
+        gridContainer.appendChild(rowDiv);}
     }
 }
 //CHANGE COLOR FUNCTION
