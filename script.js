@@ -27,11 +27,12 @@ function colorChange(e) {
     Math.round(Math.random() * (max - min) + min);
     const {hue, saturation, lightness} = {
         hue: randomNumber(0, 360),
-        saturation: randomNumber(0, 100),
-        lightness: randomNumber(0, 100),
+        saturation: randomNumber(50, 100),
+        lightness: 50,
     };
     e.target.style.backgroundColor = `hsl(${hue}, ${saturation}%, ${lightness}%)`;
 }
+
 //CHANGE COLOR FUNCTION
 // function colorChange(e) {
 //     let r = Math.floor(Math.random() * 256);
